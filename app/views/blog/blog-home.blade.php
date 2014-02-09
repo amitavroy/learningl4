@@ -2,7 +2,7 @@
 
 @section('content')
   <div ng-controller="BlogController">
-    {{ name }}
+    {[ name ]}
     
     @foreach ($blogs as $blog)
       <h1>{{ $blog['content']->nodeTitle }}</h1>
