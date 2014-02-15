@@ -71,6 +71,7 @@ class Blog extends Node
     $blogData = array(
       'content' => $blog,
       'tags' => parent::getNodeTerms($blog->nodeId),
+      'url_alias' => parent::getNodeAlias($blog->nodeId),
     );
 
     Cache::put('blog-' . $blogId, $blogData, $this->cacheTime);

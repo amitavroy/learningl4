@@ -142,4 +142,10 @@ class Node extends Eloquent
 
     return $query->get();
   }
+
+  protected function getNodeAlias($nid)
+  {
+    $alias = DB::table('url_alias')->select('alias')->where('source', '=', 'node/' . $nid)->lists('alias');
+    return $alias[0];
+  }
 }

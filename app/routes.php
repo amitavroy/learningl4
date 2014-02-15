@@ -16,13 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-/*Route::get('blog', function() 
-{
-  $blog = new Blog;
-  $lastestBlogs = $blog->getLatestBlogs();
-  $blogs = $blog->getBlogs($lastestBlogs);
-  // return Response::json($blogs, 200);
-  echo "<pre>" . print_r($blogs, true);
-});*/
-
 Route::get('blog', 'HomeController@blogHome');
+
+// multiple segment route - https://github.com/laravel/framework/issues/150
+Route::get('blog/{segments}', 'HomeController@singlePost')->where('segments', '(.*)');

@@ -31,4 +31,13 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('blog.blog-home')->with('blogs', $blogs);
 	}
 
+	public function singlePost($alias)
+	{
+		$segments = explode('/', $alias);
+		$nodeId = $segments[count($segments) - 1];
+		$blog = new Blog();
+		$thisBlogPost = $blog->getBlogs($nodeId);
+		$this->layout->content = View::make('blog.blog-post')->with('post', $thisBlogPost);
+	}
+
 }
