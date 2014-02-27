@@ -14,18 +14,24 @@
         @yield('content')
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4" ng-controller="SidebarController">
         <h2>Latest Articles</h2>
-        
+        <ul>
+          <li ng-repeat="article in sideBarArticles">{[article.name]}</li>
+        </ul>
       </div>
     </div>
   </div>
 
   @section('scripts')
+    @if (Config::get('app.development') == 'true')
     <script type="text/javascript" src="{{ asset('assets/js/angular.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/shCore.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/shBrushPhp.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/dev/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/dev/sidebar.js') }}"></script>
+    @else
+    <script type="text/javascript" src="{{ asset('assets/js/angular.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/prod/home.js') }}"></script>
+    @endif
   @show
   
 </body>
