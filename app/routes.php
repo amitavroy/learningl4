@@ -20,3 +20,6 @@ Route::get('blog', 'HomeController@blogHome');
 
 // multiple segment route - https://github.com/laravel/framework/issues/150
 Route::get('blog/{segments}', 'HomeController@singlePost')->where('segments', '(.*)');
+
+Route::get('register', 'HomeController@registerFormPage');
+Route::post('registration/save', array('as' => 'registration-save', 'uses' => 'HomeController@saveRegistration', 'before' => 'csrf'));

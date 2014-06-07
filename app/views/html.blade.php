@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   @section('pageHeadSection')
   {{ HTML::style('assets/css/bootstrap.min.css') }}
+  {{ HTML::style('assets/css/custom.css') }}
   @show
 </head>
 <body>
 
   <div class="container">
+    @if (Session::get('message'))
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-{{ Session::get('message-flag') }}">{{ Session::get('message') }}</div>
+      </div>
+    </div>
+    @endif
     <div class="row">
       <div class="col-md-8">
         @yield('content')
