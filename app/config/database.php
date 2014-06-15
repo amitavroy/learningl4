@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'drupal7',
+			'database'  => 'drupal7_cafe',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

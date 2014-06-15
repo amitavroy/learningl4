@@ -23,3 +23,6 @@ Route::get('blog/{segments}', 'HomeController@singlePost')->where('segments', '(
 
 Route::get('register', 'HomeController@registerFormPage');
 Route::post('registration/save', array('as' => 'registration-save', 'uses' => 'HomeController@saveRegistration', 'before' => 'csrf'));
+
+Route::get('send-mail/login', 'SendmailController@handleMailLogin');
+Route::post('send-mail/authenticate', array('as' => 'sendmail-authenticate', 'uses' => 'SendmailController@authenticateUserDetails', 'before' => 'csrf'));
