@@ -18,10 +18,11 @@
     </div>
     <div class="form-group">
       {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Enter your password')) }}
-      <span class="error-display">{{$errors->first('email')}}</span>
+      <span class="error-display">{{$errors->first('password')}}</span>
     </div>
     <div class="form-group">
       <input type="text" id="subject" placeholder="Enter the subject of the email" class="form-control" name="subject" />
+      <span class="error-display">{{$errors->first('subject')}}</span>
     </div>
     <input type="submit" name="login" value="Login" class="btn btn-success">
     {{Form::close()}}

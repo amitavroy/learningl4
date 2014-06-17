@@ -12,7 +12,22 @@ class SendmailController extends BaseController {
 
   public function authenticateUserDetails()
   {
-    // GlobalHelper::dsm(Input::all(), true);
+    // setting up the rules for validatoin
+    $rules = array(
+      'email' => 'required|email',
+      'password' => 'required',
+      'subject' => 'required',
+    );
+
+    // doing the validation, passing post data and rules
+    $validator = Validator::make(Input::all(), $rules);
+
+    if ($validator->fails())
+    {
+      // send back to the page with the input data and errors
+      GlobalHelper::setMessage('Fix the errors.', 'warning'); // settig the error message
+      return Redirect::to('send-mail/login')->withInput()->withErrors($validator);
+    }
 
     // setting the username and password from post data
     $username = Input::get('email');
