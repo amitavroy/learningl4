@@ -6,7 +6,9 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"barryvdh/laravel-debugbar": "dev-master",
-		"barryvdh/laravel-httpcache": "dev-master"
+		"barryvdh/laravel-httpcache": "dev-master",
+		"artdarek/oauth-4-laravel": "dev-master",
+		"cartalyst/sentry": " 2.1.*"
 	},
 	"autoload": {
 		"classmap": [

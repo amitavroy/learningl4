@@ -166,4 +166,13 @@ class GlobalHelper {
     $workTypes = explode('|', $text);
     return $workTypes;
   }
+  
+  public static function checkAuth ()
+    {
+        $auth = Session::get('checkAuth');
+        if ($auth == 'true')
+            return true;
+        else
+            return false;
+    }
 }

@@ -8,7 +8,9 @@
   @show
 </head>
 <body>
-
+  @if (isset($menu) && $menu == true)
+  @include('nav')
+  @endif
   <div class="container">
     @if (Session::get('message'))
     <div class="row">
@@ -22,17 +24,21 @@
         @yield('content')
       </div>
 
+      @if (isset($sidebar) && !$sidebar == false)
       <div class="col-md-4" ng-controller="SidebarController">
         <h2>Latest Articles</h2>
         <ul>
           <li ng-repeat="article in sideBarArticles">{[article.name]}</li>
         </ul>
       </div>
+      @endif
     </div>
   </div>
 
   @section('scripts')
     @if (Config::get('app.development') == 'true')
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-1.11.0.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/angular.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dev/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dev/sidebar.js') }}"></script>

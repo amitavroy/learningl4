@@ -117,8 +117,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
-		'Barryvdh\Debugbar\ServiceProvider',
+    'Barryvdh\Debugbar\ServiceProvider',
+	  'Cartalyst\Sentry\SentryServiceProvider',
+	  'Artdarek\OAuth\OAuthServiceProvider'
 
 	),
 
@@ -185,8 +186,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
 		'Debugbar' 				=> 'Barryvdh\Debugbar\Facade',
+	  'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+    'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
 
 	),
 
