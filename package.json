@@ -1,9 +1,0 @@
-{
-  "name": "learning-laravel-4",
-  "version": "0.0.1",
-  "devDependencies": {
-    "grunt": "^0.4.2",
-    "grunt-contrib-jshint": "^0.8.0",
-    "grunt-contrib-concat": "^0.3.0"
-  }
-}
