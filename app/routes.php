@@ -15,3 +15,6 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('csv-data', 'HomeController@showCSVDataExample');
+Route::get('get-csv-file', 'HomeController@getCSVLink');

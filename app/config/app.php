@@ -112,7 +112,8 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Amitavroy\Blogger\BloggerServiceProvider'
+        'Amitavroy\Blogger\BloggerServiceProvider',
+	    'Amitavroy\Utils\UtilsServiceProvider'
     )
     ,
 
