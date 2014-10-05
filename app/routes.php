@@ -15,3 +15,12 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('user', 'HomeController@showLoginPage');
+Route::post('user/login', array('before' => 'csrf', 'uses' => 'HomeController@handleUserLogin'));
+
+// this is the authenticated section
+Route::group(array('before' => 'auth'), function() {
+    Route::get('dashboard', 'HomeController@showUserDashboard');
+    Route::get('user/logout', 'HomeController@handleUserLogout');
+});
