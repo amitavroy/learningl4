@@ -75,5 +75,4 @@ class HomeController extends BaseController {
 	{
 		$this->layout->content = View::make('user.user_dashboard');
 	}
-
 }
