@@ -52,6 +52,12 @@ class HomeController extends BaseController {
 		// checking the authentication
 		if (Auth::attempt($credentials))
 		{
+			// Firing the login event
+			$subscriber = new UserEventHandler;
+			Event::subscribe($subscriber);
+			$event = Event::fire('user.login', array(Auth::user()));
+
+			// Redirect to dashboard
 		    return Redirect::intended('dashboard');
 		}
 		else
