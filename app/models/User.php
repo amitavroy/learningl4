@@ -23,8 +23,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	/**
+	 * This function is taking the userId 
+	 * and updating the user's last login time.
+	 */
 	public function updateLastLoggedIn($userId)
 	{
+		// set the default time zone, hard coded for now.
 		date_default_timezone_set('Asia/Kolkata');
 		
 		DB::table('users')->where('id', $userId)->update(array(

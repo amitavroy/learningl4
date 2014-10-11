@@ -10,7 +10,7 @@ class UserEventHandler {
         $thisUser = new User;
 
         /**
-         * Adding an entry to the user table when the user last logged in.
+         * Updating an entry to the user table when the user last logged in.
          */
         $thisUser->updateLastLoggedIn($user->id);
     }
