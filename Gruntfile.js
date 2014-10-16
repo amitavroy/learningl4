@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+
+    /**
+     * Adding the modules required.
+     */
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -6,6 +10,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
  
+    /**
+     * Defining the path variables.
+     */
     var devPath = 'public/script/dev';
     var prodPath = 'public/script/prod';
     var cssPath = 'public/css';
@@ -77,6 +84,7 @@ module.exports = function(grunt) {
             grunt.config.set('concat', concat);
         });
         
+        // finally run the concat file
         grunt.task.run('concat');
     });
 }
